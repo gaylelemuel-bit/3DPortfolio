@@ -1,0 +1,241 @@
+/* static/css/experience.css */
+
+/* ── Page Hero ── */
+.exp-hero {
+    padding: 6rem 1rem 5rem;
+    background: radial-gradient(ellipse at top left, var(--deep-emerald), var(--obsidian));
+    border-bottom: 1px solid var(--border-dim);
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.exp-hero h1 {
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    line-height: 0.95;
+    color: white;
+    margin-bottom: 1.25rem;
+}
+
+.exp-hero h1 span {
+    color: var(--vivid-gold);
+    -webkit-text-stroke: 1px var(--vivid-gold);
+    -webkit-text-fill-color: transparent;
+}
+
+.exp-hero p {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ── Section Dividers ── */
+.exp-section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.exp-section-header h2 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.exp-section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--vivid-gold), transparent);
+}
+
+/* ── Experience Cards ── */
+.exp-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    border-left: 4px solid var(--vivid-gold);
+    padding: 2rem 2rem 2rem 2.5rem;
+    margin-bottom: 1.75rem;
+    box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease;
+    position: relative;
+}
+
+.exp-card:hover {
+    transform: translate(-6px, -6px);
+    box-shadow: 18px 18px 0px var(--dark-gold);
+}
+
+.exp-card-dot {
+    position: absolute;
+    left: -10px;
+    top: 2rem;
+    width: 16px;
+    height: 16px;
+    background: var(--vivid-gold);
+    border: 3px solid var(--obsidian);
+    border-radius: 50%;
+}
+
+.exp-card .role-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.exp-card .company-name {
+    color: var(--vivid-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.exp-card .description {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+}
+
+.exp-card ul.description {
+    margin-bottom: 1.25rem;
+}
+
+.exp-card ul.description li {
+    margin-bottom: 0.35rem;
+}
+
+.exp-card ul.description strong {
+    color: var(--vivid-gold);
+    font-weight: 700;
+}
+
+.date-badge {
+    background: rgba(255, 204, 102, 0.1) !important;
+    color: var(--vivid-gold) !important;
+    border: 1px solid rgba(255, 204, 102, 0.3) !important;
+    font-family: 'Inter', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.skill-pill {
+    background: rgba(255, 204, 102, 0.12) !important;
+    color: var(--vivid-gold) !important;
+    border: 1px solid rgba(255, 204, 102, 0.25) !important;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-radius: 2px !important;
+}
+
+/* ── Tech Stack ── */
+.tech-stack-section {
+    background: var(--deep-emerald);
+    border: 1px solid var(--border-dim);
+    padding: 4rem 2.5rem;
+    margin-top: 4rem;
+    box-shadow: var(--brutal-shadow);
+}
+
+.tech-category {
+    margin-bottom: 2.5rem;
+}
+
+.tech-category-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--vivid-gold);
+    font-weight: 900;
+    border-bottom: 1px solid rgba(255, 204, 102, 0.2);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--glass-white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.4rem 0.85rem;
+    font-size: 0.78rem;
+    color: var(--text-light);
+    transition: all 0.2s ease;
+    cursor: default;
+    letter-spacing: 0.5px;
+}
+
+.tech-chip:hover {
+    background: rgba(255, 204, 102, 0.12);
+    border-color: var(--vivid-gold);
+    color: var(--vivid-gold);
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 0px var(--dark-gold);
+}
+
+.chip-icon { font-size: 0.95rem; line-height: 1; }
+
+/* ── Proficiency Bars ── */
+.proficiency-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-dim);
+    padding: 3rem 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 12px 12px 0px rgba(0,0,0,0.3);
+}
+
+.prof-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.prof-bar-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+
+.prof-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--deep-emerald), var(--vivid-gold));
+    transition: width 1.2s ease;
+}
+
+.prof-pct {
+    color: var(--vivid-gold);
+    font-weight: 700;
+    font-size: 0.78rem;
+}
+
+/* Named widths */
+.w-65 { width: 65%; }
+.w-75 { width: 75%; }
+.w-78 { width: 78%; }
+.w-80 { width: 80%; }
+.w-85 { width: 85%; }
+.w-90 { width: 90%; }
+.w-92 { width: 92%; }

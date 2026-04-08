@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}My Mission | Digital Disciple Developer{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mission.css' %}">
+{% endblock extra_css %}
+
+{% block full_width %}
+<div class="hero-section">
+    <div class="hero-container">
+        <div class="hero-content">
+            <div class="hero-tag fade-in fade-in-d1">Digital Disciple Developer</div>
+            <h1 class="fade-in fade-in-d2">Building Tech<br>With <span>Purpose &amp; Faith</span></h1>
+            <p class="hero-subtitle fade-in fade-in-d3">
+                Software crafted not just with code — but with calling. 
+                Serving God's people through technology, one commit at a time.
+            </p>
+            <div class="hero-cta fade-in fade-in-d4">
+        <a href="#contact" class="cta-button primary">Work With Purpose</a>
+        <a href="{% url 'projects' %}" class="cta-button secondary">View Projects</a>
+    </div>
+        </div>
+
+        <div class="profile-section fade-in fade-in-d4">
+            <div class="profile-img-wrap">
+                <img src="{% static 'images/LG.PNG' %}" alt="Lemuel Gayle" class="profile-img">
+            </div>
+            <div class="profile-info">
+                <div class="profile-name">Lemuel Gayle</div>
+                <div class="profile-role">Digital Disciple Developer</div>
+            </div>
+            <hr class="profile-divider">
+        </div>
+
+    </div>
+</div>
+{% endblock full_width %}
+
+{% block content %}
+<div class="mission-content">
+    <div class="content-row fade-in">
+
+        <div class="scripture-card">
+            <p class="scripture-text">
+                "My people are being destroyed because they don’t know me. Since you priests refuse to know me, I refuse to recognize you as my priests. Since you have forgotten the laws of your God, I will forget to bless your children."
+            </p>
+            <div class="scripture-ref">— Hosea 4:6 (NLT) &nbsp;|&nbsp; My Anchor Verse</div>
+        </div>
+
+        <div class="bio-section">
+            <div class="section-eyebrow">About Me</div>
+            <div class="section-title mb-3">My Story &amp; Mission</div>
+            <p class="bio-text">
+                I am a <strong>faith-centered software developer</strong> who believes technology is one of the most powerful tools God has given this generation — and it must be used intentionally. Hosea 4:6 is a constant reminder that <em>knowledge matters</em>, and that ignorance has consequences. My mission is to close that gap: building digital tools that educate, empower, and uplift communities rooted in faith.
+            </p>
+            <p class="bio-text mt-3">
+                Whether it's a Web Application, Troubleshooting, or a Data Pipeline, I approach every project as an act of service — to God first, and then to the people who will use what I build.
+            </p>
+        </div>
+
+    </div>
+    <div class="pillars-section">
+        <div class="text-center mb-4 fade-in">
+            <div class="section-eyebrow">What Drives Me</div>
+            <div class="section-title">My Pillars</div>
+        </div>
+        <div class="row g-3">
+            <div class="col-md-4 fade-in fade-in-d1">
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#x271D;</div>
+                    <div class="pillar-title">Faith</div>
+                    <p class="pillar-text">Every line of code is written under the conviction that I am building for a higher purpose. Discipline, integrity, and servanthood are non-negotiables.</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in fade-in-d2">
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#128218;</div>
+                    <div class="pillar-title">Knowledge</div>
+                    <p class="pillar-text">Hosea 4:6 is my mandate. Ignorance is dangerous — so I pursue continuous learning and build tools that make knowledge accessible to all.</p>
+                </div>
+            </div>
+            <div class="col-md-4 fade-in fade-in-d3">
+                <div class="pillar-card">
+                    <div class="pillar-icon">&#128187;</div>
+                    <div class="pillar-title">Craft</div>
+                    <p class="pillar-text">Clean code, thoughtful UX, and purposeful architecture. I take pride in building things that work well, look great, and last long.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-section fade-in">
+        <h2>Let&#39;s Build Something Meaningful</h2>
+        <p>Whether you're a ministry, a startup, or an individual — if you have a vision, let's talk about bringing it to life.</p>
+        <a href="{% url 'experience' %}" class="btn-glow">View My Experience</a>
+        <a href="#" class="btn-outline-light-custom">Contact Me</a>
+    </div>
+
+</div>
+{% endblock %}

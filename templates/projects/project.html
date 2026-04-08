@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title %}Curated Works | Portfolio{% endblock title %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/project.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<section class="projects-section py-6">
+    <div class="container">
+        <!-- Editorial Header -->
+        <div class="project-header mb-5 pb-4 border-bottom border-secondary-subtle">
+            <h2 class="display-4 fw-light serif-font">Technical <span class="fst-italic fw-normal">Craftsmanship</span></h2>
+        </div>
+
+        <div class="row g-5">
+            {% for project in projects %}
+            <div class="col-lg-6">
+                <div class="project-luxury-card">
+                    <a href="{{project.repository}}" target="_blank" class="text-decoration-none">
+                        <div class="image-wrapper position-relative overflow-hidden rounded-4 shadow-lg mb-4">
+                            <img src="{{project.image.url}}" alt="{{project.name}}" class="img-fluid project-img">
+                            <div class="overlay-glass d-flex align-items-end p-4">
+                                <span class="year-badge font-monospace">{{project.year}}</span>
+                            </div>
+                        </div>
+                        <!-- Project Details -->
+                        <div class="project-info px-2">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="h4 text-gold fw-bold mb-0">{{project.name}}</h3>
+                                <div class="arrow-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                                </div>
+                            </div>
+                            
+                            <p class="text-secondary fw-light mb-3 lh-base">{{project.description}}</p>
+                            
+                            <div class="skills-minimal d-flex flex-wrap gap-2">
+                                {% for skill in project.skills.all %}
+                                <span class="skill-tag-luxury">{{skill.name}}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}
