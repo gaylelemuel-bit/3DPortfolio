@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact | Digital Disciple Developer{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock extra_css %}
+
+{% block full_width %}
+<div class="contact-hero">
+    <div class="contact-hero-inner">
+        <div class="section-eyebrow fade-in">Let's Work Together</div>
+        <h1 class="contact-hero-title fade-in fade-in-d1">
+            Let's Build Something<br><span>Meaningful</span>
+        </h1>
+        <p class="contact-hero-sub fade-in fade-in-d2">
+            Whether you're a ministry, startup, recruiter, or individual — if you have a vision, I want to hear it.
+        </p>        
+    </div>
+</div>
+{% endblock full_width %}
+
+{% block content %}
+
+<div class="contact-layout">
+    <aside class="contact-info-panel fade-in fade-in-d1">
+
+        <div class="info-block">
+            <div class="info-icon">&#9993;</div>
+            <div class="info-label">Email</div>
+            <div class="info-value" id="email-display">3DigitalDev@gmail.com</div>
+            <button class="copy-btn" id="copy-email-btn" onclick="copyEmail()" title="Copy email">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span id="copy-label">Copy</span>
+            </button>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <div class="info-block">
+            <div class="info-icon">&#127758;</div>
+            <div class="info-label">Based In</div>
+            <div class="info-value">United States</div>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <div class="info-block">
+            <div class="info-icon">&#9679;</div>
+            <div class="info-label">Availability</div>
+            <div class="info-value availability-open">
+                <span class="availability-dot"></span> Open to opportunities
+            </div>
+        </div>
+
+        <div class="info-divider"></div>
+        <div class="info-block">
+            <div class="info-label mb-2">What I Can Build For You</div>
+            <ul class="services-list">
+                <li>Web Applications &amp; APIs</li>
+                <li>Data Pipelines &amp; Automation</li>
+                <li>Ministry &amp; Non-Profit Tools</li>
+                <li>E-Commerce Solutions</li>
+                <li>Dashboards &amp; Analytics</li>
+            </ul>
+        </div>
+
+        <div class="info-divider"></div>
+
+        <div class="social-links">
+            <div class="info-label mb-3">Connect Professionally</div>
+            <div class="social-row">
+                <a href="https://github.com/gaylelemuel-bit" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/lemuel-g-807168168/" target="_blank" class="social-link" rel="noopener noreferrer">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn — Let's connect
+                </a>
+            </div>
+        </div>
+
+        <div class="info-scripture">
+            <p>"Expand the Kingdom of God"</p>
+            <span>— Matthew 28:18-20</span>
+        </div>
+
+    </aside>
+    <div class="contact-form-wrap">
+
+        {% if success %}
+        <div class="success-message fade-in">
+            <div class="success-icon">&#10003;</div>
+            <h3>Message Received</h3>
+            <p>Thank you for reaching out. Here's what happens next:</p>
+
+            <div class="success-steps">
+                <div class="success-step">
+                    <div class="success-step-num">01</div>
+                    <div class="success-step-text">
+                        <strong>Message Received</strong>
+                        <span>Your message has been delivered to my inbox successfully.</span>
+                    </div>
+                </div>
+                <div class="success-step-arrow">&#8595;</div>
+                <div class="success-step">
+                    <div class="success-step-num">02</div>
+                    <div class="success-step-text">
+                        <strong>I'll Review It</strong>
+                        <span>I will read and respond within 24–48 hours.</span>
+                    </div>
+                </div>
+                <div class="success-step-arrow">&#8595;</div>
+                <div class="success-step">
+                    <div class="success-step-num">03</div>
+                    <div class="success-step-text">
+                        <strong>We Get On a Call</strong>
+                        <span>We'll schedule time to talk through your vision and how I can help.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-actions">
+                <a href="{% url 'contact' %}" class="btn-glow mt-3 d-inline-block">Send Another Message</a>
+                <a href="{% url 'projects' %}" class="btn-outline-light-custom mt-3 d-inline-block">View My Work</a>
+            </div>
+        </div>
+
+        {% else %}
+
+        <div class="form-header">
+            <h2 class="form-title">Start the Conversation</h2>
+            <p class="form-subtitle">All fields marked <span class="required-star">*</span> are required. Budget and timeline are optional but help me respond faster.</p>
+        </div>
+
+        {% if error %}
+        <div class="error-banner fade-in">
+            Please correct the errors below before submitting.
+        </div>
+        {% endif %}
+
+        <form method="POST" action="{% url 'contact' %}" class="contact-form fade-in fade-in-d2" novalidate>
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="{{ form.name.id_for_label }}" class="form-label-custom">
+                        {{ form.name.label }} <span class="required-star">*</span>
+                    </label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                    <div class="field-error">{{ form.name.errors.0 }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}" class="form-label-custom">
+                        {{ form.email.label }} <span class="required-star">*</span>
+                    </label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                    <div class="field-error">{{ form.email.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.inquiry_type.id_for_label }}" class="form-label-custom">
+                    {{ form.inquiry_type.label }} <span class="required-star">*</span>
+                </label>
+                {{ form.inquiry_type }}
+                {% if form.inquiry_type.errors %}
+                <div class="field-error">{{ form.inquiry_type.errors.0 }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.subject.id_for_label }}" class="form-label-custom">
+                    {{ form.subject.label }} <span class="required-star">*</span>
+                </label>
+                {{ form.subject }}
+                {% if form.subject.errors %}
+                <div class="field-error">{{ form.subject.errors.0 }}</div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="{{ form.budget.id_for_label }}" class="form-label-custom">
+                        {{ form.budget.label }}
+                        <span class="optional-tag">Optional</span>
+                    </label>
+                    {{ form.budget }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.timeline.id_for_label }}" class="form-label-custom">
+                        {{ form.timeline.label }}
+                        <span class="optional-tag">Optional</span>
+                    </label>
+                    {{ form.timeline }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.message.id_for_label }}" class="form-label-custom">
+                    {{ form.message.label }} <span class="required-star">*</span>
+                </label>
+                {{ form.message }}
+                {% if form.message.errors %}
+                <div class="field-error">{{ form.message.errors.0 }}</div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                <label for="{{ form.heard_from.id_for_label }}" class="form-label-custom">
+                    {{ form.heard_from.label }}
+                    <span class="optional-tag">Optional</span>
+                </label>
+                {{ form.heard_from }}
+            </div>
+
+            <div class="form-footer-row">
+                <button type="submit" class="contact-submit-btn">
+                    <span>Send Message</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+                </button>
+                <p class="form-privacy-note">
+                    &#128274; Your information is never shared or sold. I respond personally to every message.
+                </p>
+            </div>
+
+        </form>
+        <div class="not-ready-bar fade-in">
+            <span>Not ready to reach out yet?</span>
+            <a href="{% url 'projects' %}">Browse my projects first &rarr;</a>
+        </div>
+
+        {% endif %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function copyEmail() {
+    const email = document.getElementById('email-display').textContent.trim();
+    navigator.clipboard.writeText(email).then(() => {
+        const label = document.getElementById('copy-label');
+        label.textContent = 'Copied!';
+        setTimeout(() => { label.textContent = 'Copy'; }, 2000);
+    });
+}
+</script>
+{% endblock %}

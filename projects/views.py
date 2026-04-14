@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from .models import Project 
+from .models import Project
 
-# Create your views here.
+
 def projects_view(request):
-    project_list = Project.objects.all().order_by('-year')
+    featured = Project.objects.filter(is_featured=True).order_by('-year')[:3]
+    all_projects = Project.objects.all().order_by('-year')
     context = {
-        'projects': project_list,
+        'featured_projects': featured,
+        'projects': all_projects,
     }
     return render(request, 'projects/project.html', context)

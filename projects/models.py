@@ -14,6 +14,7 @@ class Project(models.Model):
     image = models.ImageField(upload_to='imageProject/')
     repository = models.URLField()
     skills = models.ManyToManyField("Skill")
+    is_featured = models.BooleanField(default=False)
 
     def __str__(self):
         return f'{self.name} ({self.year})'

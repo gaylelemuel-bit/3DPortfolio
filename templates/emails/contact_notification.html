@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Contact — {{ inquiry_type }}</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f4; padding: 32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%;">
+          <tr>
+            <td style="background: linear-gradient(135deg, #01160a 0%, #048433 100%); border-bottom: 3px solid #f7c257; padding: 36px 40px; text-align:center;">
+              <p style="margin:0 0 4px 0; font-size:20px; text-transform:uppercase; letter-spacing:4px; color:rgb(239, 183, 71);">Digital Disciple Developer</p>
+              <h1 style="margin:0; font-size:22px; font-weight:900; text-transform:uppercase; letter-spacing:2px; color:#ffffff;">New Portfolio Inquiry</h1>
+              <p style="margin:12px 0 0 0; font-size:11px; color:rgba(14, 14, 14, 0.944); text-transform:uppercase; letter-spacing:2px;">{{ inquiry_type }}</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#ffcc66; padding:12px 40px; text-align:center;">
+              <p style="margin:0; font-size:11px; font-weight:700; color:#090909; text-transform:uppercase; letter-spacing:2px;">
+                &#9679;&nbsp; You have a new message from your portfolio contact form
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#ffffff; padding:40px 40px 32px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+                <tr>
+                  <td style="padding-bottom:20px; border-bottom:1px solid #f0f0f0;">
+                    <p style="margin:0 0 2px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">From</p>
+                    <p style="margin:0; font-size:18px; font-weight:700; color:#1a1a1a;">{{ name }}</p>
+                    <a href="mailto:{{ email }}" style="font-size:13px; color:#01280f; text-decoration:none;">{{ email }}</a>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+                    <p style="margin:0 0 3px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Type of Inquiry</p>
+                    <p style="margin:0; font-size:14px; color:#1a1a1a; font-weight:600;">{{ inquiry_type }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+                    <p style="margin:0 0 3px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Subject</p>
+                    <p style="margin:0; font-size:14px; color:#1a1a1a; font-weight:600;">{{ subject }}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="50%" style="padding-right:16px;">
+                          <p style="margin:0 0 3px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Budget Range</p>
+                          <p style="margin:0; font-size:14px; color:#1a1a1a; font-weight:600;">{% if budget %}{{ budget }}{% else %}Not specified{% endif %}</p>
+                        </td>
+                        <td width="50%">
+                          <p style="margin:0 0 3px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Timeline</p>
+                          <p style="margin:0; font-size:14px; color:#1a1a1a; font-weight:600;">{% if timeline %}{{ timeline }}{% else %}Not specified{% endif %}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0; border-bottom: 1px solid #f5f5f5;">
+                    <p style="margin:0 0 10px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Message</p>
+                    <div style="background-color:#f9f9f9; border-left:3px solid #ffcc66; padding:16px 20px; font-size:14px; color:#333333; line-height:1.7;">
+                      {{ message|linebreaksbr }}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px 0;">
+                    <p style="margin:0 0 3px 0; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:#b38b3d;">Where They Heard About You</p>
+                    <p style="margin:0; font-size:14px; color:#1a1a1a; font-weight:600;">{% if heard_from %}{{ heard_from }}{% else %}Not specified{% endif %}</p>
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#fafafa; padding:28px 40px; text-align:center; border-top:1px solid #eeeeee;">
+              <p style="margin:0 0 16px 0; font-size:13px; color:#666666;">Reply directly to this inquiry:</p>
+              <a href="mailto:{{ email }}?subject=Re: {{ subject }}"
+                 style="display:inline-block; background: linear-gradient(135deg, #ffcc66, #b38b3d); color:#01160a; font-size:12px; font-weight:900; text-transform:uppercase; letter-spacing:2px; padding:14px 36px; text-decoration:none;">
+                Reply to {{ name }}
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#01160a; padding:24px 40px; text-align:center;">
+              <p style="margin:0 0 4px 0; font-size:10px; color:rgba(255,204,102,0.5); text-transform:uppercase; letter-spacing:3px;">Digital Disciple Developer</p>
+              <p style="margin:0; font-size:10px; color:rgba(255,255,255,0.2); letter-spacing:1px;">This message was submitted via your portfolio contact form.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

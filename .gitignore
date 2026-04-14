@@ -1,0 +1,31 @@
+# ── Secrets — NEVER commit these ──
+.env
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Django ──
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# ── Virtual environments ──
+venv/
+env/
+.venv/
+
+# ── macOS ──
+.DS_Store
+.AppleDouble
+.LSOverrideIcon
+
+# ── IDEs ──
+.vscode/
+.idea/
+*.swp
+*.swo
