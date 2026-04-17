@@ -49,7 +49,6 @@
         <div class="info-divider"></div>
 
         <div class="info-block">
-            <div class="info-icon">&#9679;</div>
             <div class="info-label">Availability</div>
             <div class="info-value availability-open">
                 <span class="availability-dot"></span> Open to opportunities
@@ -60,8 +59,9 @@
         <div class="info-block">
             <div class="info-label mb-2">What I Can Build For You</div>
             <ul class="services-list">
-                <li>Web Applications &amp; APIs</li>
-                <li>Data Pipelines &amp; Automation</li>
+                <li>Web Applications</li>
+                <li>Business Solutions &amp; Digital Cards</li>
+                <li>Data Pipelines</li>
                 <li>Ministry &amp; Non-Profit Tools</li>
                 <li>E-Commerce Solutions</li>
                 <li>Dashboards &amp; Analytics</li>
@@ -183,14 +183,6 @@
                 <div class="field-error">{{ form.subject.errors.0 }}</div>
                 {% endif %}
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="{{ form.budget.id_for_label }}" class="form-label-custom">
-                        {{ form.budget.label }}
-                        <span class="optional-tag">Optional</span>
-                    </label>
-                    {{ form.budget }}
-                </div>
                 <div class="form-group">
                     <label for="{{ form.timeline.id_for_label }}" class="form-label-custom">
                         {{ form.timeline.label }}
@@ -198,7 +190,6 @@
                     </label>
                     {{ form.timeline }}
                 </div>
-            </div>
             <div class="form-group">
                 <label for="{{ form.message.id_for_label }}" class="form-label-custom">
                     {{ form.message.label }} <span class="required-star">*</span>
